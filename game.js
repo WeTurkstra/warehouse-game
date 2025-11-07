@@ -66,17 +66,21 @@ const forklift = {
         const gravity = 0.8;
         const groundY = canvas.height - 50 - this.height;
 
-        if (this.y < groundY) {
-            this.velocityY += gravity;
-            this.grounded = false;
-        } else {
+        // Apply gravity
+        this.velocityY += gravity;
+
+        // Apply velocity to position
+        this.y += this.velocityY;
+
+        // Check if landed on ground
+        if (this.y >= groundY) {
             this.y = groundY;
             this.velocityY = 0;
             this.jumping = false;
             this.grounded = true;
+        } else {
+            this.grounded = false;
         }
-
-        this.y += this.velocityY;
     },
 
     jump() {
