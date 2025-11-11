@@ -40,17 +40,16 @@ h1 {
     font-weight: bold;
 }
 
-.score, .high-score {
+.level, .moves, .best-moves {
     color: #667eea;
 }
 
 #gameCanvas {
     border: 4px solid #764ba2;
     border-radius: 10px;
-    background: #e8f4f8;
+    background: #2c2c2c;
     display: block;
     margin: 0 auto;
-    cursor: pointer;
     image-rendering: pixelated;
     image-rendering: crisp-edges;
 }
@@ -70,7 +69,7 @@ h1 {
     font-size: 1.1em;
 }
 
-.game-over {
+.level-complete, .game-complete {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -82,23 +81,33 @@ h1 {
     z-index: 10;
 }
 
-.game-over.hidden {
+.level-complete.hidden, .game-complete.hidden {
     display: none;
 }
 
-.game-over h2 {
+.level-complete h2, .game-complete h2 {
     color: #764ba2;
     margin-bottom: 20px;
     font-size: 2.5em;
 }
 
-.game-over p {
+.level-complete p, .game-complete p {
     font-size: 1.5em;
     margin-bottom: 20px;
     color: #667eea;
 }
 
-#restartBtn {
+#newRecord {
+    color: #FFD700;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+#newRecord.hidden {
+    display: none;
+}
+
+#nextLevelBtn, #playAgainBtn {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     border: none;
@@ -110,11 +119,11 @@ h1 {
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
-#restartBtn:hover {
+#nextLevelBtn:hover, #playAgainBtn:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(118, 75, 162, 0.4);
 }
 
-#restartBtn:active {
+#nextLevelBtn:active, #playAgainBtn:active {
     transform: translateY(0);
 }
